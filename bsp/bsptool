@@ -52,6 +52,7 @@ usage()
     echo "      init                    initialise build environment                "
     echo "                              use '. $0 init' to jump to build dir        "
     echo "      bb      <bitbake_args>  run a bitbake command                       "
+    echo "      devtool <bitbake_args>  run a devtool command                       "
     echo "                                                                          "
     echo "      build   [mainos|        run build of single components (or all)     "
     echo "               configos|      if unspecified)                             "
@@ -221,6 +222,12 @@ cmd_bb()
 {
     cmd_init
     wrap bitbake ${EXTRA}
+}
+
+cmd_devtool()
+{
+    cmd_init
+    wrap devtool ${EXTRA}
 }
 
 cmd_backup()
